@@ -18,6 +18,14 @@ export class AppComponent implements OnInit {   //初始化
 
   ngOnInit(): void {
 
+    this.myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {
+      keyboard: false
+    });
+
+    $('#submit2').on('click', () => {
+      this.myModal.show();
+    });
+
     /*
 
     this.myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {
