@@ -816,7 +816,7 @@ body {
     background-size: cover;
     padding: 60px 0 0 0;
     position: relative;
-    height:900px;
+    height:1200px;
   }
   
   #facts::before {
@@ -858,19 +858,19 @@ body {
 
   #facts .facts-base-A {
     position:absolute;
-    top:150px;
+    top:400px;
     left:10px;
-    //width:150px;
-    //height:150px;
+    width:2500px;
+    height:750px;
     z-index:1;
   }
 
   #facts .facts-btn-A {
     position:absolute;
-    top:200px;
+    top:470px;
     left:30px;
-    //width:150px;
-    //height:150px;
+    width:1050px;
+    height:750px;
     z-index:2;
   }
   

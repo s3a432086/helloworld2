@@ -34,8 +34,9 @@
   <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
   <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
-  <!-- Main Stylesheet File -->
-  <link href="styles.scss" rel="stylesheet">
+  <!-- Main Stylesheet File (ver防快取)-->  
+  <link href="styles.scss?ver=20220915001" rel="stylesheet">
+
 
 
 </head>
@@ -232,16 +233,187 @@
         </div>
         -->
 
+        <!-- 客製區開始-->
         <div class="facts-base-A">
           <img src="img/keyboard/base/baseA.png" alt="" class="img-fluid">
         </div>
 
         <div class="facts-btn-A">
-          <img src="img/keyboard/btn/A.png" alt="" class="img-fluid">
+          <img id="facts-btn-A" src="img/keyboard/btn/A.png" alt="" class="img-fluid">
         </div>
+
+        <div class="d-grid gap-2 col-6 d-md-flex justify-content-md-end"  style="margin-top:50px;">
+          <button id="btn-white-cap" type="button" class="btn btn-primary btn-sm">白鍵帽</button>
+          <button id="btn-black-cap" type="button" class="btn btn-secondary btn-sm">黑鍵帽</button>
+        </div>
+        <!-- 客製區結束-->
 
       </div>
     </section><!-- #facts -->
+
+
+    <!--==========================
+      Portfolio Section
+    ============================-->
+    <section id="portfolio"  class="section-bg" >
+      <div class="container">
+
+        <header class="section-header">
+          <h3 class="section-title">我們的產品</h3>
+        </header>
+
+        <div class="row">
+          <div class="col-lg-12">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">全部</li>
+              <li data-filter=".filter-app">電腦零組件</li>
+              <li data-filter=".filter-card">3C周邊</li>
+              <li data-filter=".filter-web">資訊顧問</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row portfolio-container">
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="img/portfolio/app1.jpg" class="img-fluid" alt="">
+                <a href="img/portfolio/app1.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
+                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+              </figure>
+
+              <div class="portfolio-info">
+                <h4><a href="#">主機板</a></h4>
+                <p>ASUS、技嘉、MSI 等大廠全系列主機板</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web wow fadeInUp" data-wow-delay="0.1s">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="img/portfolio/web3.jpg" class="img-fluid" alt="">
+                <a href="img/portfolio/web3.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 3" title="Preview"><i class="ion ion-eye"></i></a>
+                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+              </figure>
+
+              <div class="portfolio-info">
+                <h4><a href="#">桌機組裝諮詢服務</a></h4>
+                <p>由專業人員提供諮詢服務</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp" data-wow-delay="0.2s">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="img/portfolio/app2.jpg" class="img-fluid" alt="">
+                <a href="img/portfolio/app2.jpg" class="link-preview" data-lightbox="portfolio" data-title="App 2" title="Preview"><i class="ion ion-eye"></i></a>
+                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+              </figure>
+
+              <div class="portfolio-info">
+                <h4><a href="#">水冷系統</a></h4>
+                <p>水冷散熱系統規劃組裝</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card wow fadeInUp">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="img/portfolio/card2.jpg" class="img-fluid" alt="">
+                <a href="img/portfolio/card2.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 2" title="Preview"><i class="ion ion-eye"></i></a>
+                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+              </figure>
+
+              <div class="portfolio-info">
+                <h4><a href="#">品牌音響</a></h4>
+                <p>Marshall、JBL、鐵三角 等品牌音響全系列</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web wow fadeInUp" data-wow-delay="0.1s">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="img/portfolio/web2.jpg" class="img-fluid" alt="">
+                <a href="img/portfolio/web2.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 2" title="Preview"><i class="ion ion-eye"></i></a>
+                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+              </figure>
+
+              <div class="portfolio-info">
+                <h4><a href="#">辦公室電腦配置</a></h4>
+                <p>公司行號辦公室網路、電腦等資訊系統規劃安裝服務</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp" data-wow-delay="0.2s">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="img/portfolio/app3.jpg" class="img-fluid" alt="">
+                <a href="img/portfolio/app3.jpg" class="link-preview" data-lightbox="portfolio" data-title="App 3" title="Preview"><i class="ion ion-eye"></i></a>
+                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+              </figure>
+
+              <div class="portfolio-info">
+                <h4><a href="#">硬碟</a></h4>
+                <p>SSD、M.2、HDD 等各規格之硬碟選擇 </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card wow fadeInUp">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="img/portfolio/card1.jpg" class="img-fluid" alt="">
+                <a href="img/portfolio/card1.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 1" title="Preview"><i class="ion ion-eye"></i></a>
+                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+              </figure>
+
+              <div class="portfolio-info">
+                <h4><a href="#">監視器</a></h4>
+                <p>居家、公司、學校 監視系統規劃配置</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card wow fadeInUp" data-wow-delay="0.1s">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="img/portfolio/card3.jpg" class="img-fluid" alt="">
+                <a href="img/portfolio/card3.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 3" title="Preview"><i class="ion ion-eye"></i></a>
+                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+              </figure>
+
+              <div class="portfolio-info">
+                <h4><a href="#">網路設備</a></h4>
+                <p>Wi-Fi、路由器、伺服器、網路線配置</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web wow fadeInUp" data-wow-delay="0.2s">
+            <div class="portfolio-wrap">
+              <figure>
+                <img src="img/portfolio/web1.jpg" class="img-fluid" alt="">
+                <a href="img/portfolio/web1.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 1" title="Preview"><i class="ion ion-eye"></i></a>
+                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
+              </figure>
+
+              <div class="portfolio-info">
+                <h4><a href="#">個人電腦組裝服務</a></h4>
+                <p>根據您的需求設計組裝個人客製化電腦</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- #portfolio -->
 
 
     <!--==========================
@@ -405,168 +577,6 @@
 
     
 
-    <!--==========================
-      Portfolio Section
-    ============================-->
-    <section id="portfolio"  class="section-bg" >
-      <div class="container">
-
-        <header class="section-header">
-          <h3 class="section-title">Our Portfolio</h3>
-        </header>
-
-        <div class="row">
-          <div class="col-lg-12">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-card">Card</li>
-              <li data-filter=".filter-web">Web</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="row portfolio-container">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp">
-            <div class="portfolio-wrap">
-              <figure>
-                <img src="img/portfolio/app1.jpg" class="img-fluid" alt="">
-                <a href="img/portfolio/app1.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
-                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-              </figure>
-
-              <div class="portfolio-info">
-                <h4><a href="#">App 1</a></h4>
-                <p>App</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web wow fadeInUp" data-wow-delay="0.1s">
-            <div class="portfolio-wrap">
-              <figure>
-                <img src="img/portfolio/web3.jpg" class="img-fluid" alt="">
-                <a href="img/portfolio/web3.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 3" title="Preview"><i class="ion ion-eye"></i></a>
-                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-              </figure>
-
-              <div class="portfolio-info">
-                <h4><a href="#">Web 3</a></h4>
-                <p>Web</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp" data-wow-delay="0.2s">
-            <div class="portfolio-wrap">
-              <figure>
-                <img src="img/portfolio/app2.jpg" class="img-fluid" alt="">
-                <a href="img/portfolio/app2.jpg" class="link-preview" data-lightbox="portfolio" data-title="App 2" title="Preview"><i class="ion ion-eye"></i></a>
-                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-              </figure>
-
-              <div class="portfolio-info">
-                <h4><a href="#">App 2</a></h4>
-                <p>App</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card wow fadeInUp">
-            <div class="portfolio-wrap">
-              <figure>
-                <img src="img/portfolio/card2.jpg" class="img-fluid" alt="">
-                <a href="img/portfolio/card2.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 2" title="Preview"><i class="ion ion-eye"></i></a>
-                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-              </figure>
-
-              <div class="portfolio-info">
-                <h4><a href="#">Card 2</a></h4>
-                <p>Card</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web wow fadeInUp" data-wow-delay="0.1s">
-            <div class="portfolio-wrap">
-              <figure>
-                <img src="img/portfolio/web2.jpg" class="img-fluid" alt="">
-                <a href="img/portfolio/web2.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 2" title="Preview"><i class="ion ion-eye"></i></a>
-                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-              </figure>
-
-              <div class="portfolio-info">
-                <h4><a href="#">Web 2</a></h4>
-                <p>Web</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp" data-wow-delay="0.2s">
-            <div class="portfolio-wrap">
-              <figure>
-                <img src="img/portfolio/app3.jpg" class="img-fluid" alt="">
-                <a href="img/portfolio/app3.jpg" class="link-preview" data-lightbox="portfolio" data-title="App 3" title="Preview"><i class="ion ion-eye"></i></a>
-                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-              </figure>
-
-              <div class="portfolio-info">
-                <h4><a href="#">App 3</a></h4>
-                <p>App</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card wow fadeInUp">
-            <div class="portfolio-wrap">
-              <figure>
-                <img src="img/portfolio/card1.jpg" class="img-fluid" alt="">
-                <a href="img/portfolio/card1.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 1" title="Preview"><i class="ion ion-eye"></i></a>
-                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-              </figure>
-
-              <div class="portfolio-info">
-                <h4><a href="#">Card 1</a></h4>
-                <p>Card</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card wow fadeInUp" data-wow-delay="0.1s">
-            <div class="portfolio-wrap">
-              <figure>
-                <img src="img/portfolio/card3.jpg" class="img-fluid" alt="">
-                <a href="img/portfolio/card3.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 3" title="Preview"><i class="ion ion-eye"></i></a>
-                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-              </figure>
-
-              <div class="portfolio-info">
-                <h4><a href="#">Card 3</a></h4>
-                <p>Card</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web wow fadeInUp" data-wow-delay="0.2s">
-            <div class="portfolio-wrap">
-              <figure>
-                <img src="img/portfolio/web1.jpg" class="img-fluid" alt="">
-                <a href="img/portfolio/web1.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 1" title="Preview"><i class="ion ion-eye"></i></a>
-                <a href="#" class="link-details" title="More Details"><i class="ion ion-android-open"></i></a>
-              </figure>
-
-              <div class="portfolio-info">
-                <h4><a href="#">Web 1</a></h4>
-                <p>Web</p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- #portfolio -->
 
     <!--==========================
       Clients Section
@@ -892,7 +902,26 @@
         -->
         Best <a href="https://bootstrapmade.com/">Bootstrap Templates</a> by BootstrapMade
       </div>
+
       <button id="submit2">submit2</button>
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </footer><!-- #footer -->
 
@@ -915,8 +944,8 @@
   <!-- Contact Form JavaScript File -->
   <script src="contactform/contactform.js"></script>
 
-  <!-- Template Main Javascript File -->
-  <script src="js/main.js"></script>
+  <!-- Template Main Javascript File (ver 防快取) -->
+  <script src="js/main.js?ver=20220915001"></script>
 
 
 

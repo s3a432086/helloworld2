@@ -167,4 +167,25 @@ jQuery(document).ready(function( $ ) {
     items: 1
   });
 
+
+
+  //測試
+  $('#submit2').on('click', () => {
+    this.myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {
+      keyboard: false
+    });
+
+    this.myModal.show();
+  });
+
+  //var x = document.getElementById("facts-btn-A").getAttribute("src");
+  $('#btn-white-cap').on('click', () => {
+    document.getElementById("facts-btn-A").src="../img/keyboard/btn/A.png";
+  });
+
+  $('#btn-black-cap').on('click', () => {
+    document.getElementById("facts-btn-A").src="../img/keyboard/btn/B.png";
+  });
+  
+
 });
