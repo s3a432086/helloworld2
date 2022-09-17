@@ -860,8 +860,8 @@ body {
     position:absolute;
     top:400px;
     left:10px;
-    width:2500px;
-    height:750px;
+    max-width: 100%;
+    height:auto;
     z-index:1;
   }
 
@@ -869,8 +869,8 @@ body {
     position:absolute;
     top:470px;
     left:30px;
-    width:1050px;
-    height:750px;
+    max-width: 100%;
+    height:auto;
     z-index:2;
   }
   
