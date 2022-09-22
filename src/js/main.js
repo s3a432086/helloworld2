@@ -186,6 +186,45 @@ jQuery(document).ready(function( $ ) {
   $('#btn-black-cap').on('click', () => {
     document.getElementById("facts-btn-A").src="../img/keyboard/btn/B.png";
   });
+
+  $('#btn-create-new-order').on('click', () => {
+    var mysql  = require('mysql');  
+ 
+    var connection = mysql.createConnection({     
+      host     : 'localhost',       
+      // user     : 'jacktec1_jacktechtw',              
+      // password : 'Xx2243601@',    
+      user     : 'root',              
+      password : '123456',     
+      port: '3306',                   
+      database: 'jacktec1_helloworld2' 
+    }); 
+    
+    connection.connect();
+    
+    // var  sql = "INSERT INTO TEST (DATE, TIME, USER, ORDERNO, TYPE) "+
+    //            " VALUES ('20220921', '12:13:14', 'DAVID', '00456', 'BLACK') ";
+
+    connection.query('select * from TEST', function(err, rows, fields) {
+      if (err) throw err;
+      console.log('The solution is: ', rows);
+    });
+
+    var  sql = "SELECT * FROM TEST ";
+    //查
+    // connection.query(sql,function (err, result) {
+    //         if(err){
+    //           console.log('[INSERT INTO ERROR] - ',err.message);
+    //           return;
+    //         }
+    
+    //       console.log('--------------------------INSERT INTO----------------------------');
+    //       console.log(result);
+    //       console.log('------------------------------------------------------------\n\n');  
+    // });
+    
+    connection.end();
+  });
   
 
 });
