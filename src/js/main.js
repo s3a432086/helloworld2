@@ -189,7 +189,7 @@ jQuery(document).ready(function( $ ) {
 
   
   $('#btn-create-new-order').on('click', () => {
-      this.http.get('https://jacktechtw.com/back.php?TABLE=TEST&USER=STEVE').subscribe(data => {
+      this.http.get('https://jacktechtw.com/back.php?TABLE=TEST&USER=steve').subscribe(data => {
         var obj = JSON.parse(data);
         alert(obj.USER);
       })
