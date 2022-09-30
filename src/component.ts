@@ -1,38 +1,13 @@
-// import { enableProdMode } from '@angular/core';
-// import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-
-// import { AppModule } from './app/app.module';
-// import { environment } from './environments/environment';
-
-// if (environment.production) {
-//   enableProdMode();
-// }
-
-// platformBrowserDynamic().bootstrapModule(AppModule)
-//   .catch(err => console.error(err));
-
-import { FormsModule } from '@angular/forms';
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { DatePipe } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+//import { Todo, TodoStatusType } from './@models/todo.model';
 
-@NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpClientModule,//引入這個
-  ],
-  providers: [],
-  bootstrap: [
-    AppComponent
-  ]
+@Component({
+  selector: 'app-root',
+  templateUrl: 'index.html',
+  styleUrls: ['styles.scss']
 })
-//export class AppModule { }
 export class AppComponent implements OnInit {
   title = 'OneTodo';
   placeholder = 'What needs to be done????'
