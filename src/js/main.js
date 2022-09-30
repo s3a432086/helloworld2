@@ -187,9 +187,15 @@ jQuery(document).ready(function( $ ) {
     document.getElementById("facts-btn-A").src="../img/keyboard/btn/B.png";
   });
 
+  
   $('#btn-create-new-order').on('click', () => {
-    $.getJSON("back.php/TEST",function(data){
-      alert(data);
+      this.http.get('https://jacktechtw.com/back.php?TABLE=TEST&USER=STEVE').subscribe(data => {
+        var obj = JSON.parse(data);
+        alert(obj.USER);
+      })
+    // $.getJSON("back.php/TEST",function(data){
+    //   var obj = JSON.parse(data);
+    //   alert(obj.);
     })
 
 

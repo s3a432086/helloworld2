@@ -15,8 +15,8 @@ mysqli_set_charset($link,'utf8');
 // $key = array_shift($request)+0;
 // $table = 'test';
 // $key = array_shift(['STEVE']);
-$table = preg_replace('/[^a-z0-9_]+/i','',array_shift($request));
-$key = array_shift($request)+0;
+$table = $_GET['TABLE'];
+$key = $_GET['USER'];
  
 // create SQL based on HTTP method
 switch ($method) {
