@@ -190,8 +190,9 @@ jQuery(document).ready(function( $ ) {
   
   $('#btn-create-new-order').on('click', () => {
       this.http.get('https://jacktechtw.com/back.php?TABLE=TEST&USER=steve').subscribe(data => {
-        var obj = JSON.parse(data);
-        alert(obj.USER);
+        alert(data.text());
+        // var obj = JSON.parse(data);
+        // alert(obj.USER);
       })
     // $.getJSON("back.php/TEST",function(data){
     //   var obj = JSON.parse(data);
