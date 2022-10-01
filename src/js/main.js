@@ -1,4 +1,4 @@
-import {URLSearchParams} from '@angular/http';
+// import {URLSearchParams} from '@angular/http';
 jQuery(document).ready(function( $ ) {
 
   // Back to top button
@@ -190,21 +190,21 @@ jQuery(document).ready(function( $ ) {
 
   
   $('#btn-create-new-order').on('click', () => {
-      // this.http.get('https://jacktechtw.com/back.php?TABLE=TEST&USER=steve').subscribe(data => {
-        // var obj = JSON.parse(data);
-        // alert(obj.USER);
-      // })
+      this.http.get('https://jacktechtw.com/back.php?TABLE=TEST&USER=STEVE').subscribe(data => {
+        var obj = JSON.parse(data);
+        alert(obj.USER);
+      })
 
-      console.log("GET");
-      let url = `${'https://jacktechtw.com/back.php'}/get`;
-      let search = new URLSearchParams();
-      search.set('TABLE', 'TEST');
-      search.set('USER', 'steve');
-      this.http.get(url, {search: search}).subscribe(res => {
-        console.log(res.json())
-        alert(res.json());
-      }
-      ); (1)
+      // console.log("GET");
+      // let url = `${'https://jacktechtw.com/back.php'}/get`;
+      // let search = new URLSearchParams();
+      // search.set('TABLE', 'TEST');
+      // search.set('USER', 'steve');
+      // this.http.get(url, {search: search}).subscribe(res => {
+      //   console.log(res.json())
+      //   alert(res.json());
+      // }
+      // ); (1)
 
 
     // $.getJSON("back.php/TEST",function(data){
