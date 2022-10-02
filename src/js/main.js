@@ -210,7 +210,7 @@ jQuery(document).ready(function( $ ) {
     // $.getJSON("back.php/TEST",function(data){
     //   var obj = JSON.parse(data);
     //   alert(obj.);
-    })
+    });
 
 
     // var mysql  = require('mysql');  
