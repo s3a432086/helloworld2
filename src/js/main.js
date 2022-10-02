@@ -249,7 +249,7 @@ jQuery(document).ready(function( $ ) {
     // // });
     
     // connection.end();
-  });
+  // });
   
 
 });
