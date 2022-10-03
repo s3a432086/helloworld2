@@ -190,21 +190,23 @@ jQuery(document).ready(function( $ ) {
 
   
   $('#btn-create-new-order').on('click', () => {
-      this.http.get('https://jacktechtw.com/back.php?TABLE=TEST&USER=STEVE').subscribe(data => {
-        var obj = JSON.parse(data);
-        alert(obj.USER);
-      })
+      // this.http.get('https://jacktechtw.com/back.php?table=TEST&user=STEVE').subscribe(data => {
+      //   var obj = JSON.parse(data);
+      //   alert(obj.USER);
+      // })
 
-      // console.log("GET");
-      // let url = `${'https://jacktechtw.com/back.php'}/get`;
-      // let search = new URLSearchParams();
-      // search.set('TABLE', 'TEST');
-      // search.set('USER', 'steve');
-      // this.http.get(url, {search: search}).subscribe(res => {
-      //   console.log(res.json())
-      //   alert(res.json());
-      // }
-      // ); (1)
+      const name = 'oxxo';
+      const age = 18;
+      // 有興趣的可以使用下方的網址測試
+      const uri = 'https://jacktechtw.com/back.php?table=TEST&user=STEVE';
+
+      fetch(uri, {method:'GET'})
+      .then(res => {
+          return res.text();   // 使用 text() 可以得到純文字 String
+      }).then(result => {
+          console.log(result); // 得到「你的名字是：oxxo，年紀：18 歲。」
+          alert(result);
+      });
 
 
     // $.getJSON("back.php/TEST",function(data){
