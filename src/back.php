@@ -22,7 +22,7 @@ $key = $_GET['user'];
 switch ($method) {
   case 'GET':
     // $sql = "select * from `$table`".($key?" WHERE USER=`$key`":''); break;
-    $sql = "select * from `$table` WHERE USER=$key"; break;
+    $sql = "select * from `$table` WHERE USER=`$key`"; break;
   case 'PUT':
     $sql = "update `$table` set $set where id=$key"; break;
   case 'POST':
