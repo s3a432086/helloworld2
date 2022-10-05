@@ -1,5 +1,11 @@
 <?php
  
+ header("Expires: Wed, 05 Oct 2022 20:00:00 GMT");
+ header("Last-Modified: ".gmdate("D, d M Y H:i:s")." GMT");
+ header("Cache-Control: no-store, no-cache, must-revalidate");
+ header("Cache-Control: post-check=0, pre-check=0", false);
+ header("Pragma: no-cache");
+
 // get the HTTP method, path and body of the request
 $method = $_SERVER['REQUEST_METHOD'];
 $request = explode('/', trim($_SERVER['PATH_INFO'],'/'));
