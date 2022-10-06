@@ -190,10 +190,6 @@ jQuery(document).ready(function( $ ) {
 
   
   $('#btn-create-new-order').on('click', () => {
-      // this.http.get('https://jacktechtw.com/back.php?table=TEST&user=STEVE').subscribe(data => {
-      //   var obj = JSON.parse(data);
-      //   alert(obj.USER);
-      // })
 
       const name = 'oxxo';
       const age = 18;
@@ -209,49 +205,101 @@ jQuery(document).ready(function( $ ) {
       });
 
 
-    // $.getJSON("back.php/TEST",function(data){
-    //   var obj = JSON.parse(data);
-    //   alert(obj.);
-    });
+  });
 
 
-    // var mysql  = require('mysql');  
- 
-    // var connection = mysql.createConnection({     
-    //   host     : 'localhost',       
-    //   // user     : 'jacktec1_jacktechtw',              
-    //   // password : 'Xx2243601@',    
-    //   user     : 'root',              
-    //   password : '123456',     
-    //   port: '3306',                   
-    //   database: 'jacktec1_helloworld2' 
-    // }); 
-    
-    // connection.connect();
-    
-    // // var  sql = "INSERT INTO TEST (DATE, TIME, USER, ORDERNO, TYPE) "+
-    // //            " VALUES ('20220921', '12:13:14', 'DAVID', '00456', 'BLACK') ";
+  
+  $("#flipbook").turn({
+    width: 400,
+    height: 300,
+    autoCenter: true
+});
 
-    // connection.query('select * from TEST', function(err, rows, fields) {
-    //   if (err) throw err;
-    //   console.log('The solution is: ', rows);
-    // });
 
-    // var  sql = "SELECT * FROM TEST ";
-    // //查
-    // // connection.query(sql,function (err, result) {
-    // //         if(err){
-    // //           console.log('[INSERT INTO ERROR] - ',err.message);
-    // //           return;
-    // //         }
-    
-    // //       console.log('--------------------------INSERT INTO----------------------------');
-    // //       console.log(result);
-    // //       console.log('------------------------------------------------------------\n\n');  
-    // // });
-    
-    // connection.end();
-  // });
+
+
+$(window).resize(function(e){
+// window.addEventListener('resize',function(e){
+  flipbook.style.width="";
+  flipbook.style.height="";
+  $(flipbook).turn("size", window.innerWidth*0.5,window.innerHeight*0.8);
+});   
   
 
+});
+
+
+
+
+// var url = 'E:\軟體開發\Angular\helloworld2\src\pdf\DM_V1.pdf'; //你要放的pdf檔
+// var url = 'https://jacktechtw.com/pdf/DM_V1.pdf'; //你要放的pdf檔
+// var url = 'https://github.com/s3a432086/helloworld2/raw/master/src/pdf/DM_V1.pdf.pdf'; //你要放的pdf檔
+var url = '../pdf/DM_V1.pdf'; //你要放的pdf檔
+var flipbook = document.getElementById('flipbook');
+var scale = 1.5; //可靠這個修改canvas解析度
+
+// $(window).show(function(){
+//     getpdf(url);
+// });
+
+window.onload = function(){
+  getpdf(url);
+};
+
+function getpdf(url){
+
+  var pdfjsLib = window['pdfjs-dist/build/pdf'];
+  pdfjsLib.GlobalWorkerOptions.workerSrc = '//mozilla.github.io/pdf.js/build/pdf.worker.js';  // 若是下載在自己的本端，這邊src為自己專案中worker.js的路徑
+
+  var loadingTask = pdfjsLib.getDocument(url);
+  
+  loadingTask.promise.then(function(pdf) {   //根據總頁數新增固定的div和canvas
+ 
+  console.log("總頁數",pdf.numPages);
+  for (let i = 1; i <= pdf.numPages;i++) {
+    let id = 'canvaspage' + i;
+    let div = document.createElement('div');
+    div.innerHTML = '<canvas id="' + id + '"></canvas>';
+    flipbook.append(div);
+    setcanvas(i,pdf,id);
+  }
+            
+  //呼叫turn方法
+    loadApp()					
+  })
+};
+
+//將pdf新增到canvas裡面
+function setcanvas(i,pdf,id){
+  pdf.getPage(i).then(function(page) {
+    var viewport = page.getViewport({scale: scale});
+ 
+    let canvas = document.getElementById(id);
+    let context = canvas.getContext('2d');
+
+    canvas.height = viewport.height;
+    canvas.width = viewport.width;
+
+    // Render PDF page into canvas context
+    let renderContext = {
+    canvasContext: context,
+    viewport: viewport
+    };
+
+    page.render(renderContext);
+  })
+};
+		
+function loadApp() {
+        $(flipbook).turn({
+          autoCenter: true,//是否置中
+          //display: 'single',//單頁顯示
+        });
+};
+
+// $(window).resize(function(e){
+window.addEventListener('resize',function(e){
+  flipbook.style.width="";
+  flipbook.style.height="";
+  $(flipbook).turn("size", window.innerWidth*0.5,window.innerHeight*0.8);
 });

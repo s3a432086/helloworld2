@@ -29,6 +29,7 @@
               "src/bizpage-master",
               "src/img",
               "src/lib",
+              "src/pdf",
               "src/js"
             ],
             "styles": [
@@ -101,6 +102,7 @@
               "src/bizpage-master",
               "src/img",
               "src/lib",
+              "src/pdf",
               "src/js"
             ],
             "styles": [
