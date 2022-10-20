@@ -216,15 +216,31 @@ jQuery(document).ready(function( $ ) {
 var flipbookEL = document.getElementById('flipbook');
 
 $(window).resize(function(){
-  $(flipbookEL).turn('size', window.innerHeight*1.15, window.innerHeight*0.85);
+  // $(flipbookEL).turn('size', window.innerHeight*1.15, window.innerHeight*0.85);
+  var width  = $(window).width(),
+	  	height = $(window).height();
+
+  // if (Math.abs(height-width)>300){
+    if (width >= height) {
+      $(flipbookEL).turn('size', height*1.13, height*1.13*0.70706);
+      // $(flipbookEL).turn('left', (width/2)-(height*1.13*0.70706));
+      // $(flipbookEL).css({top: 20, left: (width/2)-(height*1.13*0.70706)});
+    } else {
+      $(flipbookEL).turn('size', width*0.5*1.414305, width*0.5);
+      // $(flipbookEL).turn('left', (width/2)-(width*0.5));
+      // $(flipbookEL).css({top: 20, left: (width/2)-(width*0.5)});
+    };
+  // }
+  
+  
 });
 
 $(function loadAPP() {
-  for (let i = 1; i < 21;i++) {
+  for (let i = 1; i < 29;i++) {
     let id = i;
     let div = document.createElement('div');
     div.className = 'page';
-    div.innerHTML = '<img src="img/dm/202211/' + id + '.png" draggable="false" alt="123" />';
+    div.innerHTML = '<img src="img/dm/202211/' + id + '.jpg" draggable="false" alt="123" />';
     flipbook.append(div);
   }
 
@@ -232,10 +248,14 @@ $(function loadAPP() {
       autoCenter: true
   });
 
-  $(flipbookEL).turn('size', window.innerHeight*1.15, window.innerHeight*0.85);
+  // $(flipbookEL).turn('size', window.innerHeight*1.15, window.innerHeight*0.85);
 });
 
 
+//聯絡我們
+// $('#icon-ig').on('click', () => {
+//   window.open("https://instagram.com/jacktechtw?igshid=YmMyMTA2M2Y=");
+// });
 
 
 
