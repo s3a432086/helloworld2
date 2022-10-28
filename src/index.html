@@ -211,15 +211,38 @@
           <p style="font-size:18px;color:white">拉動頁角翻頁</p>
         </header>
 
-        <div class="wrapper">
-          <div class="aspect">
-            <div class="aspect-inner">
-              <div class="flipbook" id="flipbook">
-                <!-- 這裡用js迴圈塞 -->
+        <div class="zoom-icon zoom-icon-in"></div>
+        
+        <div class="magazine-viewport">
+            <div class="magazine">
+              <!-- Next button -->
+              <div ignore="1" class="next-button"></div>
+              <!-- Previous button -->
+              <div ignore="1" class="previous-button"></div>
+            
+
+              <div class="wrapper">
+                <div class="aspect">
+                  <div class="aspect-inner">
+                    <div class="flipbook" id="flipbook">
+                      <!-- 這裡用js迴圈塞 -->
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
+
+              
+
           </div>
         </div>
+
+        <div class="dialog-bg" id="dialog-bg">
+          <div class="img-box" id="img-box">
+              <img src="">
+          </div>
+        </div>
+
+
         
       </div>
     </section>
@@ -1012,7 +1035,7 @@
   <script type="text/javascript" src="lib/jquery/turn.js"></script>
   <script type="text/javascript" src="lib/jquery/turn.min.js"></script>
   <!-- <script type="text/javascript" src="lib/jquery/turn.html4.min.js"></script> -->
-  <!-- <script src="lib/jquery/zoom.min.js"></script> -->
+  <script src="lib/jquery/zoom.min.js"></script>
   <!-- <script type="text/javascript" src="lib/jquery/hash.js"></script> -->
   <!-- <script type="text/javascript" src="lib/jquery/modernizr.2.5.3.min.js"></script> -->
   <!-- <script src="lib/jquery/pdf.js"></script> -->

@@ -212,44 +212,59 @@ jQuery(document).ready(function( $ ) {
 
 
 
-//flipbook
-var flipbookEL = document.getElementById('flipbook');
+  //flipbook
+  var flipbookEL = document.getElementById('flipbook');
 
-$(window).resize(function(){
-  // $(flipbookEL).turn('size', window.innerHeight*1.15, window.innerHeight*0.85);
-  var width  = $(window).width(),
-	  	height = $(window).height();
+  $(window).resize(function(){
+    // $(flipbookEL).turn('size', window.innerHeight*1.15, window.innerHeight*0.85);
+    var width  = $(window).width(),
+        height = $(window).height();
 
-  // if (Math.abs(height-width)>300){
-    if (width >= height) {
-      $(flipbookEL).turn('size', height*1.13, height*1.13*0.70706);
-      // $(flipbookEL).turn('left', (width/2)-(height*1.13*0.70706));
-      // $(flipbookEL).css({top: 20, left: (width/2)-(height*1.13*0.70706)});
-    } else {
-      $(flipbookEL).turn('size', width*0.5*1.414305, width*0.5);
-      // $(flipbookEL).turn('left', (width/2)-(width*0.5));
-      // $(flipbookEL).css({top: 20, left: (width/2)-(width*0.5)});
-    };
-  // }
-  
-  
-});
-
-$(function loadAPP() {
-  for (let i = 1; i < 29;i++) {
-    let id = i;
-    let div = document.createElement('div');
-    div.className = 'page';
-    div.innerHTML = '<img src="img/dm/202211/' + id + '.jpg" draggable="false" alt="123" />';
-    flipbook.append(div);
-  }
-
-  $(flipbookEL).turn({
-      autoCenter: true
+    // if (Math.abs(height-width)>300){
+      if (width >= height) {
+        $(flipbookEL).turn('size', height*1.13, height*1.13*0.70706);
+        // $(flipbookEL).turn('left', (width/2)-(height*1.13*0.70706));
+        // $(flipbookEL).css({top: 20, left: (width/2)-(height*1.13*0.70706)});
+      } else {
+        $(flipbookEL).turn('size', width*0.5*1.414305, width*0.5);
+        // $(flipbookEL).turn('left', (width/2)-(width*0.5));
+        // $(flipbookEL).css({top: 20, left: (width/2)-(width*0.5)});
+      };
+    // }
+    
+    
   });
 
-  // $(flipbookEL).turn('size', window.innerHeight*1.15, window.innerHeight*0.85);
-});
+  $(function loadAPP() {
+    for (let i = 1; i < 29;i++) {
+      let id = i;
+      let div = document.createElement('div');
+      div.className = 'page';
+      div.innerHTML = '<img id="img" src="img/dm/202211/' + id + '.jpg" draggable="false" alt="123" />';
+      flipbook.append(div);
+    }
+
+    $(flipbookEL).turn({
+        autoCenter: true
+    });
+
+    // $(flipbookEL).turn('size', window.innerHeight*1.15, window.innerHeight*0.85);
+
+
+
+  });
+
+
+  // $('#img').on('click', function () {
+  //   alert('ok');
+  //   // $('#img-box').find('img').attr('src', 'img/dm/202211/1.jpg');
+  //   // $('#dialog-bg').show();//弹出层显示
+  // });
+
+  // //弹出层隐藏
+  // $('#dialog-bg').on('click', function () {
+  //   // $(this).hide();//
+  // });
 
 
 //聯絡我們
@@ -258,6 +273,118 @@ $(function loadAPP() {
 // });
 
 
+//zoom
+// Zoom.js
+
+$('.magazine-viewport').zoom({
+  flipbook: $('.magazine'),
+
+  max: function() { 
+    
+    return largeMagazineWidth()/$('.magazine').width();
+
+  }, 
+
+  when: {
+
+    swipeLeft: function() {
+
+      $(this).zoom('flipbook').turn('next');
+
+    },
+
+    swipeRight: function() {
+      
+      $(this).zoom('flipbook').turn('previous');
+
+    },
+
+    resize: function(event, scale, page, pageElement) {
+
+      if (scale==1)
+        loadSmallPage(page, pageElement);
+      else
+        loadLargePage(page, pageElement);
+
+    },
+
+    zoomIn: function () {
+
+      $('.thumbnails').hide();
+      $('.made').hide();
+      $('.magazine').removeClass('animated').addClass('zoom-in');
+      $('.zoom-icon').removeClass('zoom-icon-in').addClass('zoom-icon-out');
+      
+      if (!window.escTip && !$.isTouch) {
+        escTip = true;
+
+        $('<div />', {'class': 'exit-message'}).
+          html('<div>Press ESC to exit</div>').
+            appendTo($('body')).
+            delay(2000).
+            animate({opacity:0}, 500, function() {
+              $(this).remove();
+            });
+      }
+    },
+
+    zoomOut: function () {
+
+      $('.exit-message').hide();
+      $('.thumbnails').fadeIn();
+      $('.made').fadeIn();
+      $('.zoom-icon').removeClass('zoom-icon-out').addClass('zoom-icon-in');
+
+      setTimeout(function(){
+        $('.magazine').addClass('animated').removeClass('zoom-in');
+        resizeViewport();
+      }, 0);
+
+    }
+  }
+});
+
+// Zoom event
+
+if ($.isTouch)
+  $('.magazine-viewport').bind('zoom.doubleTap', zoomTo);
+else
+  $('.magazine-viewport').bind('zoom.tap', zoomTo);
+
+
+// Using arrow keys to turn the page
+
+$(document).keydown(function(e){
+
+  var previous = 37, next = 39, esc = 27;
+
+  switch (e.keyCode) {
+    case previous:
+
+      // left arrow
+      $('.magazine').turn('previous');
+      e.preventDefault();
+
+    break;
+    case next:
+
+      //right arrow
+      $('.magazine').turn('next');
+      e.preventDefault();
+
+    break;
+    case esc:
+      
+      $('.magazine-viewport').zoom('zoomOut');	
+      e.preventDefault();
+
+    break;
+  }
+});
+//zoom end
+
+  
+
 
 });
 
@@ -265,6 +392,69 @@ $(function loadAPP() {
 
 window.onload = function(){
   //
+};
+
+function loadApp() {
+  // Regions
+
+	if ($.isTouch) {
+		$('.magazine').bind('touchstart', regionClick);
+	} else {
+		$('.magazine').click(regionClick);
+	}
+
+	// Events for the next button
+
+	$('.next-button').bind($.mouseEvents.over, function() {
+		
+		$(this).addClass('next-button-hover');
+
+	}).bind($.mouseEvents.out, function() {
+		
+		$(this).removeClass('next-button-hover');
+
+	}).bind($.mouseEvents.down, function() {
+		
+		$(this).addClass('next-button-down');
+
+	}).bind($.mouseEvents.up, function() {
+		
+		$(this).removeClass('next-button-down');
+
+	}).click(function() {
+		
+		$('.magazine').turn('next');
+
+	});
+
+	// Events for the next button
+	
+	$('.previous-button').bind($.mouseEvents.over, function() {
+		
+		$(this).addClass('previous-button-hover');
+
+	}).bind($.mouseEvents.out, function() {
+		
+		$(this).removeClass('previous-button-hover');
+
+	}).bind($.mouseEvents.down, function() {
+		
+		$(this).addClass('previous-button-down');
+
+	}).bind($.mouseEvents.up, function() {
+		
+		$(this).removeClass('previous-button-down');
+
+	}).click(function() {
+		
+		$('.magazine').turn('previous');
+
+	});
+
+
+	resizeViewport();
+
+	$('.magazine').addClass('animated');
 };
 
 // var flipbookEL = document.getElementById('flipbook');
