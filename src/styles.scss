@@ -761,7 +761,7 @@ body {
     display: flex;
     height: 90%;
     justify-content: center;
-    margin: 1%;
+    margin: 4%;
     width: 90%;
   }
   
@@ -781,6 +781,7 @@ body {
   
   .flipbook {
     height: 100%;
+    top: -20px;
     transition: margin-left 0.25s ease-out;
     width: 100%;
     -webkit-touch-callout: none;
@@ -801,16 +802,18 @@ body {
     height: 100%;
   }
 
+
+
   //zoom
   .zoom-icon{
-    // position:absolute;
+    margin-left: 48%;
+    margin-top: -20px;
     z-index:1000;
-    width:22px;
-    height:22px;
-    top:10px;
+    width:40px;
+    height:40px;
     right:10px;
-    background-image:url(img/dm-pics/zoom-icons.png);
-    background-size:88px 22px;
+    background-image:url(img/dm-pics/fullscreen.png);
+    background-size:40px 40px;
   }
 
   .magazine-viewport .zoomer .region{
