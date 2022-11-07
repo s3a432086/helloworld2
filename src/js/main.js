@@ -171,6 +171,10 @@ jQuery(document).ready(function( $ ) {
 
 
   //測試
+  $('#myModal').on('shown.bs.modal', function () {
+    $('#myInput').trigger('focus')
+  })
+
   $('#submit2').on('click', () => {
     this.myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {
       keyboard: false
@@ -206,6 +210,8 @@ jQuery(document).ready(function( $ ) {
 
 
   });
+
+  
 
 
   $('#zoom-in-icon').on('click', () => {
