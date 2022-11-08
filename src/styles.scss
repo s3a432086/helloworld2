@@ -805,7 +805,7 @@ body {
 
 
   //zoom
-  #zoom-icon{
+  #flip .zoom-icon {
     margin-left: 48%;
     margin-top: -20px;
     z-index:1000;
@@ -867,7 +867,7 @@ body {
 
 
   //test
-  #magazine-viewport .shadow{
+  #flip .magazine-viewport .shadow {
     // -webkit-transition: -webkit-box-shadow 0.5s;
     // -moz-transition: -moz-box-shadow 0.5s;
     // -o-transition: -webkit-box-shadow 0.5s;
