@@ -805,15 +805,15 @@ body {
 
 
   //zoom
-  // #flip .zoom-icon {
-  #zoom-in-icon {
+  #flip .zoom-icon {
+  // #zoom-in-icon {
     margin-left: 48%;
     margin-top: -20px;
     z-index:1000;
     width:40px;
     height:40px;
     right:10px;
-    background-image:url(img/dm-pics/fullscreen.png);
+    background-image:url(img/dm-pics/fullscreen.PNG);
     background-size:40px 40px;
   }
 
@@ -868,8 +868,8 @@ body {
 
 
   //test
-  // #flip .magazine-viewport .shadow {
-  #dm-viewer .shadow{
+  #flip .magazine-viewport .shadow {
+  // #dm-viewer .shadow{
     // -webkit-transition: -webkit-box-shadow 0.5s;
     // -moz-transition: -moz-box-shadow 0.5s;
     // -o-transition: -webkit-box-shadow 0.5s;
