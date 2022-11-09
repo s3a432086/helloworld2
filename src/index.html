@@ -10,6 +10,13 @@
   <link href="./assets/bootstrap-5.2.0-dist/css/bootstrap.css" rel="stylesheet">
   -->
 
+  <script>
+  //版本歷程
+    var hello = 'v22.0：20221108建立寶寶成長日記 '
+        + '\n' +'v23.0：20221108建立寶寶成長日記 '
+                 ;
+  </script>
+
   <!--強制重新整理-->
   <meta http-equiv="cache-control" content="no-cache">
   <meta http-equiv="pragma" content="no-cache">
@@ -50,6 +57,7 @@
 <body>
   <app-root></app-root>
 
+  
 
   <!--==========================
     Header
@@ -81,23 +89,14 @@
           <li><a href="#contact">聯絡我們</a></li>
           <li><a href="https://instagram.com/jacktechtw?igshid=YmMyMTA2M2Y=" target="_blank" style="color:whitesmoke;font-weight:bold;font-size: x-large;" class="bi bi-instagram"></a></li>
           <li><a href="https://line.me/R/ti/p/@402yonqd?from=page" target="_blank" style="color:whitesmoke;font-weight:bold;font-size: x-large;" class="bi bi-line"></a></li>
-          <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModal" style="color:rgb(134, 134, 134);font-size: 3px;">v22.0</button>
-          <!-- <button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="test123">v21.0</button> -->
+          <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModal" style="color:rgb(134, 134, 134);font-size: 5%;">v22.0</button>
         </ul>
       </nav><!-- #nav-menu-container -->
-
-
-
     </div>
-
-
-    
-
   </header><!-- #header -->
 
 
   
-
 
   
   <!--==========================
@@ -225,7 +224,7 @@
 
         
         <div id="zoom-in-icon" class="zoom-icon"></div>
-        <div class="magazine-viewport">
+        <div id="dm-viewer" class="magazine-viewport">
             <div class="magazine">
               <!-- Next button -->
               <div ignore="1" class="next-button"></div>
@@ -248,11 +247,11 @@
           </div>
         </div>
 
-        <div class="dialog-bg" id="dialog-bg">
+        <!-- <div class="dialog-bg" id="dialog-bg">
           <div class="img-box" id="img-box">
               <img src="">
           </div>
-        </div>
+        </div> -->
 
 
         
@@ -929,6 +928,8 @@
       </div>
     </section><!-- #contact -->
 
+    <!-- <div id="hello">test1234567890 </div> -->
+    
     <!-- version infomation -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -938,7 +939,11 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            v22.0：20221108建立寶寶成長日記
+            <!-- v22.0：20221108建立寶寶成長日記 -->
+            <span id="hello" style="white-space:pre-line"></span>
+            <script>
+              document.getElementById("hello").textContent=hello;
+            </script>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
