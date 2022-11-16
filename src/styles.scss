@@ -803,10 +803,10 @@ body {
   }
 
 
-/*
+
   //zoom
-  #flip .zoom-icon {
-  // #zoom-in-icon {
+  // #flip .zoom-icon {
+  #zoom-in-icon {
     margin-left: 48%;
     margin-top: -20px;
     z-index:1000;
@@ -816,7 +816,7 @@ body {
     background-image:url(img/dm-pics/fullscreen.PNG);
     background-size:40px 40px;
   }
-  */
+  
 
   // .magazine-viewport .zoomer .region{
   //   display:none;
@@ -948,6 +948,41 @@ body {
   // }
 
   
+  /* Product Window
+  --------------------------------*/
+  #ProductWindow {
+    padding: 60px 0;
+  }
+  
+  #ProductWindow img {
+    max-width: 100%;
+    opacity: 0.5;
+    transition: 0.3s;
+    padding: 15px 0;
+  }
+  
+  #ProductWindow img:hover {
+    opacity: 1;
+  }
+  
+  #ProductWindow .owl-nav, #ProductWindow .owl-dots {
+    margin-top: 5px;
+    text-align: center;
+  }
+  
+  #ProductWindow .owl-dot {
+    display: inline-block;
+    margin: 0 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ddd;
+  }
+  
+  #ProductWindow .owl-dot.active {
+    background-color: #18d26e;
+  }
+
 
   
   
