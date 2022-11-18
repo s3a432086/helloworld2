@@ -278,6 +278,23 @@ jQuery(document).ready(function( $ ) {
   });
 
 
+  $('.owl-carousel').owlCarousel({
+    items:5,
+    loop:true,
+    margin:10,
+    merge:true,
+    autoHeight:true,
+    responsive:{
+        678:{
+            mergeFit:true
+        },
+        1000:{
+            mergeFit:false
+        }
+    }
+  });
+
+
   // $('#img').on('click', function () {
   //   alert('ok');
   //   // $('#img-box').find('img').attr('src', 'img/dm/202211/1.jpg');
